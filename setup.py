@@ -16,7 +16,7 @@ setup(
     description="Open and process battery charger log data files",
     long_description=readme,
     long_description_content_type="text/markdown",
-    url="https://github.com/echemdata/galvani",
+    url="https://github.com/datalab-org/galvani-mirror",
     author="Chris Kerr",
     author_email="chris.kerr@mykolab.ch",
     license="GPLv3+",
