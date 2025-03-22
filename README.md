@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 > [!NOTE]  
-> This repository is an approximate mirror of https://codeberg.org/echemdata/galvani (originally developed at https://github.com/echemdata/galvani), though the syncing is not automatic. Versions deployed to PyPI package from this repository as the `galvani-mirror` may not match those of the `galvani` package itself.
+> This repository is an approximate mirror of https://codeberg.org/echemdata/galvani (originally developed at https://github.com/echemdata/galvani), though the syncing is not automatic. Versions deployed to PyPI package from this repository as the `galvani-mirror` may not match those of the `galvani` package itself. Documentation may still contain out of date references to the original repository.
 
 Read proprietary file formats from electrochemical test stations.
 
@@ -44,7 +44,7 @@ This functionality requires [MDBTools](https://github.com/mdbtools/mdbtools) to 
 
 # Installation
 
-The latest galvani releases can be installed from [PyPI](https://pypi.org/project/galvani/) via
+The latest galvani releases can be installed from [PyPI](https://pypi.org/project/galvani-mirror/) via
 
 ```shell
 pip install galvani
@@ -67,7 +67,7 @@ GIT_LFS_SKIP_SMUDGE=1 pip install git+https://github.com/echemdata/galvani
 > cloning. 
 > The full test data from the last release can always be obtained by
 > downloading the GitHub release archives (tar or zip), at
-> https://github.com/echemdata/galvani/releases/latest
+> https://github.com/datalab-org/galvani-mirror/releases/latest
 >
 > If you wish to add test files, please ensure they are as small as possible,
 > and take care that your tests work locally without the need for the LFS files.
@@ -77,9 +77,10 @@ GIT_LFS_SKIP_SMUDGE=1 pip install git+https://github.com/echemdata/galvani
 If you wish to contribute to galvani, please clone the repository and install the testing dependencies:
 
 ```shell
-git clone git@github.com:echemdata/galvani
+git clone git@github.com:datalab-org/galvani-mirror
 cd galvani
 pip install -e .\[tests\]
 ```
 
-Code can be contributed back via [GitHub pull requests](https://github.com/echemdata/galvani/pulls) and new features or bugs can be discussed in the [issue tracker](https://github.com/echemdata/galvani/issues).
+Code can be contributed back via [GitHub pull requests](https://github.com/datalab-org/galvani-mirror/pulls) and new features or bugs can be discussed in the [issue tracker](https://github.com/datalab-org/galvani-mirror/issues).
+It may also be useful to check the original [issue tracker for galvani](https://github.com/echemdata/galvani).
