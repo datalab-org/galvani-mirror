@@ -7,6 +7,9 @@ SPDX-FileCopyrightText: 2013-2020 Christopher Kerr, Peter Attia
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
+> [!NOTE]  
+> This repository is an approximate mirror of https://codeberg.org/echemdata/galvani (originally developed at https://github.com/echemdata/galvani), though the syncing is not automatic. Versions deployed to PyPI package from this repository as the `galvani-mirror` may not match those of the `galvani` package itself.
+
 Read proprietary file formats from electrochemical test stations.
 
 # Usage
