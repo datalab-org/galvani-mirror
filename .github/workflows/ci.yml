@@ -42,7 +42,6 @@ jobs:
         with:
           latest: true
           tarBall: true
-          fileName: "galvani-*.gz"
           zipBall: false
           out-file-path: /home/runner/work/last-release
           extract: true
