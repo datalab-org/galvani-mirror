@@ -11,7 +11,7 @@ with open(os.path.join(os.path.dirname(__file__), "README.md")) as f:
     readme = f.read()
 
 setup(
-    name="galvani",
+    name="galvani-mirror",
     version="0.4.1",
     description="Open and process battery charger log data files",
     long_description=readme,
