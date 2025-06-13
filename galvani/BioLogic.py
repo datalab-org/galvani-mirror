@@ -316,6 +316,7 @@ VMPdata_colID_dtype_map = {
     174: ("<Ewe>/V", "<f4"),
     178: ("(Q-Qo)/C", "<f4"),
     179: ("dQ/C", "<f4"),
+    182: ("step time/s", "<f8"),
     211: ("Q charge/discharge/mA.h", "<f8"),
     212: ("half cycle", "<u4"),
     213: ("z cycle", "<u4"),
