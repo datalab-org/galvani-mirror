@@ -632,6 +632,8 @@ class MPRfile:
             for col, _ in dtypes:
                 if col.startswith("unknown_colID"):
                     unknown_cols.append(col)
+            if len(unknown_cols) > 3:
+                raise RuntimeError("Too many unknown columns to attempt to read combinatorially: %s" % unknown_cols)
 
         if unknown_cols:
             # create a list of all possible combinations of dtypes
