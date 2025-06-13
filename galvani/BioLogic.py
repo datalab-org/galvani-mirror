@@ -633,7 +633,10 @@ class MPRfile:
                 if col.startswith("unknown_colID"):
                     unknown_cols.append(col)
             if len(unknown_cols) > 3:
-                raise RuntimeError("Too many unknown columns to attempt to read combinatorially: %s" % unknown_cols)
+                raise RuntimeError(
+                    "Too many unknown columns to attempt to read combinatorially: %s"
+                    % unknown_cols
+                )
 
         if unknown_cols:
             # create a list of all possible combinations of dtypes
@@ -653,7 +656,11 @@ class MPRfile:
                 except ValueError:
                     continue
             else:
-                raise RuntimeError("Unable to read data for unknown columns %s with any of the common dtypes %s", unknown_cols, UNKNOWN_COLUMN_TYPE_HIERARCHY)
+                raise RuntimeError(
+                    "Unable to read data for unknown columns %s with any of the common dtypes %s",
+                    unknown_cols,
+                    UNKNOWN_COLUMN_TYPE_HIERARCHY
+                )
 
         else:
             self.dtype = np.dtype(dtypes)
