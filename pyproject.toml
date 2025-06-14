@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 [project]
-name = "galvani-mirror"
+name = "datalab-org-galvani"
 dynamic = ["version"]
 description = "Open and process battery charger log data files: fork of original package `galvani`"
 authors = [
