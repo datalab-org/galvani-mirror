@@ -39,7 +39,6 @@ jobs:
         python-version: '3.11'
 
     - name: Build source distribution
-      working-directory: "./pydatalab"
       run: |
         pip install -U build
         python -m build
