@@ -99,7 +99,7 @@ def test_colID_to_dtype(colIDs, expected):
         return
     expected_dtype = np.dtype(expected)
     dtype, flags_dict = BioLogic.VMPdata_dtype_from_colIDs(colIDs)
-    assert dtype == expected_dtype
+    assert np.dtype(dtype) == expected_dtype
 
 
 @pytest.mark.parametrize(
