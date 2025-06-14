@@ -42,6 +42,7 @@ jobs:
         with:
           latest: true
           tarBall: true
+          zipBall: false
           out-file-path: /home/runner/work/last-release
           extract: true
 
