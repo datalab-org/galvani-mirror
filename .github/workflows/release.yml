@@ -1,0 +1,45 @@
+name: Publish and release on PyPI
+on:
+  release:
+    types:
+    - published
+
+env:
+  PUBLISH_UPDATE_BRANCH: main
+  GIT_USER_NAME: datalab developers
+  GIT_USER_EMAIL: "dev@datalab-org.io"
+
+jobs:
+
+  publish-to-pypi:
+    name: "Publish on PyPI"
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    if: github.repository == 'datalab-org/galvani-mirror' && startsWith(github.ref, 'refs/tags/v')
+    environment:
+      name: pypi-release
+      url: https://pypi.org/project/datalab-org-galvani
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+        fetch-depth: 0
+        ref: ${{ env.PUBLISH_UPDATE_BRANCH }}
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Build source distribution
+      working-directory: "./pydatalab"
+      run: |
+        pip install -U build
+        python -m build
+
+    - name: Publish package to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1

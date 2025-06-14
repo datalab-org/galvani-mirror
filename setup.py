@@ -12,8 +12,10 @@ with open(os.path.join(os.path.dirname(__file__), "README.md")) as f:
 
 setup(
     name="galvani-mirror",
-    version="0.4.1",
-    description="Open and process battery charger log data files",
+    version="0.5.1",
+    description=(
+        "Open and process battery charger log data files: fork of original package `galvani`"
+    ),
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/datalab-org/galvani-mirror",
