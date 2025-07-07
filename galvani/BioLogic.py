@@ -431,7 +431,7 @@ def parse_BioLogic_date(date_text):
     return date(tm.tm_year, tm.tm_mon, tm.tm_mday)
 
 
-def VMPdata_dtype_from_colIDs(colIDs, error_on_unknown_column: bool = True):
+def VMPdata_dtype_from_colIDs(colIDs, error_on_unknown_column: bool = False):
     """Get a numpy record type from a list of column ID numbers.
 
     The binary layout of the data in the MPR file is described by the sequence
