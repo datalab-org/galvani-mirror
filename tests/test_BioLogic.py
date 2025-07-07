@@ -95,10 +95,10 @@ def test_colID_to_dtype(colIDs, expected):
     """Test converting column ID to numpy dtype."""
     if isinstance(expected, type) and issubclass(expected, Exception):
         with pytest.raises(expected):
-            BioLogic.VMPdata_dtype_from_colIDs(colIDs)
+            BioLogic.VMPdata_dtype_from_colIDs(colIDs, error_on_unknown_column=True)
         return
     expected_dtype = np.dtype(expected)
-    dtype, flags_dict = BioLogic.VMPdata_dtype_from_colIDs(colIDs)
+    dtype, flags_dict = BioLogic.VMPdata_dtype_from_colIDs(colIDs, error_on_unknown_column=True)
     assert np.dtype(dtype) == expected_dtype
 
 
