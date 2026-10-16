@@ -607,10 +607,11 @@ class MPRfile:
                 remaining_headers = data_module["data"][5 + n_columns:100]
                 main_data = data_module["data"][100:]
             else:
+                # Column IDs are little-endian u2 starting at offset 6; reading them as
+                # single bytes would drop the high byte of IDs >= 256 (e.g. 471 -> 215)
                 column_types = np.frombuffer(
-                    data_module["data"][5:], dtype="u1", count=n_columns * 2
+                    data_module["data"][6:], dtype="<u2", count=n_columns
                 )
-                column_types = column_types[1::2]  # suppressing zeros in column types array
                 # remaining headers should be empty except for bytes 5 + n_columns * 2
                 # and 1006 which are sometimes == 1
                 remaining_headers = data_module["data"][6 + n_columns * 2:1006]

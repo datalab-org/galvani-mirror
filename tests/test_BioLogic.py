@@ -358,3 +358,19 @@ def test_MPR_matches_MPT_v1150(testdata_dir, basename_v1150):
     mpr = MPRfile(binpath)
     mpt, comments = MPTfile(txtpath, encoding="latin1")
     assert_MPR_matches_MPT_v2(mpr, mpt, comments)
+
+
+@pytest.mark.parametrize(
+    "basename_v1150, expected_high_colIDs",
+    [
+        ("v1150_CA", {434, 435, 467, 468}),
+        ("v1150_GEIS", {473, 474, 476, 477, 479, 480, *range(486, 498)}),
+        ("v1150_MB", {467, 468, 469}),
+    ],
+)
+def test_MPR_v1150_colIDs_above_255(testdata_dir, basename_v1150, expected_high_colIDs):
+    """Column IDs in EC-Lab >= 11.50 files are u2 and must not be truncated to
+    their low byte (e.g. 467 being read as 211)."""
+    mpr = MPRfile(os.path.join(testdata_dir, "v1150", basename_v1150 + ".mpr"))
+    assert expected_high_colIDs <= set(int(c) for c in mpr.cols)
+    assert not any(name.startswith("unknown_colID") for name in mpr.dtype.names)
