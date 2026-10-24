@@ -404,6 +404,9 @@ VMPdata_colID_dtype_map = {
     253: ("Acir/Dcir Control", "<u1"),
     505: ("Rdc/Ohm", "<f4"),
     509: ("Acir/Dcir Control", "<u1"),
+    880: ("Energy we/W.h", "<f8"),
+    883: ("Energy ce charge/W.h", "<f8"),
+    884: ("Energy ce discharge/W.h", "<f8"),
 }
 
 # These column IDs define flags which are all stored packed in a single byte
